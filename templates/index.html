@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Viraj Thakur</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP (ORDER MATTERS) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- THREE.js -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MorphSVGPlugin.min.js"></script>
+
+
+  <!-- JS -->
+  <script defer src="/static/js/main.js"></script>
+ 
+</head>
+
+<!-- ===============================
+   FLOATING CODING STATS (HOME ONLY)
+================================ -->
+
+<div class="coding-float left">
+  <a href="https://www.hackerrank.com/profile/virajthakur987_1" target="_blank">
+    <div class="coding-chip hackerrank">
+      <span class="label">HackerRank</span>
+      <strong>Python • SQL</strong>
+      <div class="bar">
+        <i style="--p:78"></i>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="coding-float right">
+  <a href="https://www.codewars.com/users/VirajThakur" target="_blank">
+    <div class="coding-chip codewars">
+      <span class="label">Codewars</span>
+      <strong>5 kyu • 1320 XP</strong>
+      <div class="bar">
+        <i style="--p:65"></i>
+      </div>
+    </div>
+  </a>
+</div>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav nav-video">
+
+  <!-- NAV BACKGROUND VIDEO -->
+  <video class="nav-bg-video" autoplay muted loop playsinline>
+    <source src="/static/videos/nav.mp4" type="video/mp4">
+  </video>
+
+  <!-- DARK OVERLAY FOR READABILITY -->
+  <div class="nav-overlay"></div>
+
+  <!-- NAV CONTENT -->
+  <div class="nav-inner">
+    <div class="logo svg-logo">
+  <svg
+    width="70"
+    height="32"
+    viewBox="0 0 140 60"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <!-- Gradient -->
+      <linearGradient id="vtGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ff4d4d"/>
+        <stop offset="50%" stop-color="#ffd166"/>
+        <stop offset="100%" stop-color="#4dd0e1"/>
+      </linearGradient>
+
+      <!-- Glow -->
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- V -->
+    <path
+      d="M10 10 L35 50 L60 10"
+      class="vt-stroke"
+    />
+
+    <!-- T -->
+    <path
+      d="M75 10 L120 10 M97.5 10 L97.5 50"
+      class="vt-stroke"
+    />
+  </svg>
+</div>
+
+
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="/showcase">Showcase</a>
+    </div>
+  </div>
+
+</nav>
+
+
+<!-- HERO (VIDEO BACKGROUND) -->
+<section class="intro video-hero">
+   <!-- TRANSITION LAYERS -->
+  <div class="wipe white"></div>
+  <div class="wipe black"></div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="/static/videos/hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay">
+    <h1>Viraj Thakur</h1>
+    <h2 class="typed-text"></h2>
+    <p style="color: black;">Python • Data Science • Flask • Machine Learning</p>
+
+    <a href="/static/resume.pdf" class="resume-btn" download>
+      Download Resume
+    </a>
+
+    <a href="/showcase" class="showcase-btn">
+      View Latest Project
+    </a>
+  </div>
+  
+</section>
+
+<!-- WEBGL BACKGROUND -->
+<canvas id="bg-canvas"></canvas>
+
+
+<!-- WORK (VIDEO-FIRST PROJECT UI) -->
+<section id="work" class="work">
+  
+  
+  <h3 class="section-title">Projects</h3>
+
+  <div class="work-grid">
+
+    <div class="work-item video-card" onclick="openModal('speech')">
+      <video muted loop preload="metadata">
+        <source src="/static/videos/speech.mp4" type="video/mp4">
+      </video>
+      <span>Speech Emotion Recognition</span>
+    </div>
+
+    <div class="work-item video-card" onclick="openModal('bookstore')">
+      <video muted loop preload="metadata">
+        <source src="/static/videos/bookstore.mp4" type="video/mp4">
+      </video>
+      <span>Bookstore Management System</span>
+    </div>
+
+    <div class="work-item video-card" onclick="openModal('aim')">
+      <video muted loop preload="metadata">
+        <source src="/static/videos/aim.mp4" type="video/mp4">
+      </video>
+      <span>Aim Trainer</span>
+    </div>
+
+    <div class="work-item video-card" onclick="openModal('nlp')">
+      <video muted loop preload="metadata">
+        <source src="/static/videos/nlp.mp4" type="video/mp4">
+      </video>
+      <span>Password Strength (NLP)</span>
+    </div>
+
+    <div class="work-item video-card" onclick="openModal('currency')">
+      <video muted loop preload="metadata">
+        <source src="/static/videos/currency.mp4" type="video/mp4">
+      </video>
+      <span>Currency Converter</span>
+    </div>
+    
+    <div class="work-item video-card" onclick="openModal('recommender')">
+      <video muted loop preload="metadata">
+        <source src="/static/videos/recommender.mp4" type="video/mp4">
+      </video>
+      <span>Movie Recommender (ML)</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h3 class="section-title">About</h3>
+
+  <p>
+    Hi, I’m Viraj — a Python developer focused on backend systems,
+    data science, and machine learning. I enjoy building clean,
+    scalable applications and experimenting with intelligent models
+    that solve real-world problems.
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h3 class="section-title">Contact</h3>
+
+  <p>
+    Email:
+    <a href="mailto:virajthakur987.vt@gmail.com">
+      virajthakur987.vt@gmail.com
+    </a>
+  </p>
+
+  <p>
+    GitHub:
+    <a href="https://github.com/VirajThakur03" target="_blank">
+      VirajThakur03
+    </a>
+  </p>
+
+  <p>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/virajthakur003/" target="_blank">
+      virajthakur003
+    </a>
+  </p>
+
+<!-- CUTE CAT -->
+<div class="cat">
+  <div class="ear left"></div>
+  <div class="ear right"></div>
+
+  <div class="face">
+    <div class="eyes">
+      <span class="eye">
+        <span class="iris">
+          <i class="pupil"></i>
+        </span>
+      </span>
+
+      <span class="eye">
+        <span class="iris">
+          <i class="pupil"></i>
+        </span>
+      </span>
+
+    </div>
+
+    <div class="nose"></div>
+    <div class="mouth sad"></div>
+
+    <div class="whiskers left">
+      <span></span><span></span>
+    </div>
+    <div class="whiskers right">
+      <span></span><span></span>
+    </div>
+    <div class="paws">
+     <div class="paw left"><span></span></div>
+     <div class="paw right"><span></span></div>
+    </div>
+
+  </div>
+</div>
+
+
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Viraj Thakur
+</footer>
+
+</body>
+</html>
